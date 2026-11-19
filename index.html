@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Princess Collene C. Palacio | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #f8f0fc 0%, #f3d9fa 50%, #e5dbff 100%);
+      --primary-purple: #7048e8;
+      --deep-purple: #4c2a85;
+      --soft-purple: #b197fc;
+      --accent-pink: #f783ac;
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --text-dark: #2d1b4e;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(112, 72, 232, 0.12);
+      padding: 12px 15px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--deep-purple);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: var(--primary-purple);
+      color: #ffffff;
+    }
+
+    /* Header / Hero Section */
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .profile-pic {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #ffffff;
+      box-shadow: 0 10px 25px rgba(112, 72, 232, 0.25);
+      margin-bottom: 18px;
+      background-color: #e5dbff;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--deep-purple);
+      font-size: 2.2rem;
+      margin: 0 0 8px;
+    }
+
+    .subtitle {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary-purple), var(--accent-pink));
+      color: white;
+      padding: 6px 18px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(247, 131, 172, 0.3);
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px 20px 50px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(76, 42, 133, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-purple);
+      font-size: 1.65rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    h2::after {
+      content: " ✨";
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 0.98rem;
+      text-align: justify;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    /* Fun Facts / Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #f3d9fa;
+      color: var(--deep-purple);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Photo Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .photo-card {
+      background: #ffffff;
+      padding: 12px 12px 16px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(112, 72, 232, 0.12);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      background-color: #f3d9fa;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-weight: 500;
+      color: var(--deep-purple);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Contact Section */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      background: #f8f0fc;
+      padding: 12px 18px;
+      border-radius: 15px;
+      border-left: 5px solid var(--primary-purple);
+      font-size: 0.95rem;
+    }
+
+    .contact-item strong {
+      color: var(--deep-purple);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--deep-purple);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#profile">Profile Picture</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#interest">My Interest</a></li>
+      <li><a href="#home">My Home</a></li>
+      <li><a href="#future">My Future</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <!-- Profile Header -->
+  <header id="profile">
+    <img src="profile.jpg" alt="Princess Collene C. Palacio" class="profile-pic">
+    <h1>Princess Collene C. Palacio</h1>
+    <div class="subtitle">Grade 12 ABM Student • Datamex College of Saint Adeline</div>
+  </header>
+
+  <div class="container">
+
+    <!-- About Section -->
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p class="center-text">
+        Hello, everyone! I'm Princess Collene C. Palacio, and I'm currently a Grade 12 student taking the Accountancy, Business, and Management strand at Datamex College.
+      </p>
+    </section>
+
+    <!-- My Interest Section -->
+    <section id="interest" class="card">
+      <h2>My Interest</h2>
+      <p>
+        Purple has always been my favorite color it feels calm, elegant, and simply beautiful to me. Just a little fun fact about myself, I'm actually allergic to seafood, so I usually skip on those!
+      </p>
+      <p>
+        In my free time, I enjoy playing board games because they're fun and a great way to bond with people, sleeping because it's my favorite way to recharge, and watching movies that let me explore different stories and worlds. Above all, I have big dreams I want to make my family proud of me, finish my college education no matter what, and eventually land a stable job that will help me build a good life and give back to the people I love the most.
+      </p>
+      <div class="tags">
+        <span class="tag">💜 Purple</span>
+        <span class="tag">🎲 Board Games</span>
+        <span class="tag">😴 Sleeping</span>
+        <span class="tag">🎬 Watching Movies</span>
+        <span class="tag">🚫🦐 Seafood Allergy</span>
+      </div>
+    </section>
+
+    <!-- My Home Section -->
+    <section id="home" class="card">
+      <h2>My Home</h2>
+      <div class="gallery">
+        <div class="photo-card">
+          <img src="photo1.jpg" alt="10/10! 🥩🥢">
+          <div class="caption">10/10! 🥩🥢</div>
+        </div>
+
+        <div class="photo-card">
+          <img src="photo2.jpg" alt="family & friends 💞">
+          <div class="caption">family &amp; friends 💞</div>
+        </div>
+
+        <div class="photo-card">
+          <img src="photo3.jpg" alt="with buddies 🤟🏻">
+          <div class="caption">with buddies 🤟🏻</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Future Section -->
+    <section id="future" class="card">
+      <h2>My Future</h2>
+      <p>
+        Ever since I started dreaming about my future, one goal has always stayed the same to build a steady, meaningful career that will give me the stability I hope for. I want a stable job not just for myself, but so I can finally provide for my family and give back everything they've done for me every sacrifice, every effort, and all the love they've poured into raising me.
+      </p>
+      <p>
+        They've given me so much without asking for anything in return, and I hope that one day I can be the one to take care of them, just like they've always taken care of me. More than anything, I want to make them proud to show that all their hard work and belief in me was worth it, and that their love is what will always keep me going. ✨
+      </p>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="card">
+      <h2>Contacts</h2>
+      <ul class="contact-list">
+        <li class="contact-item"><strong>Address:</strong> 512 Agripina St. Aurenina Village Parañaque City</li>
+        <li class="contact-item"><strong>Phone:</strong> 09913050996</li>
+        <li class="contact-item"><strong>Instagram:</strong> cllynxs</li>
+        <li class="contact-item"><strong>Facebook:</strong> Collene Palacio</li>
+        <li class="contact-item"><strong>TikTok:</strong> cxlenzys</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="center-text">Princess Collene C. Palacio • ABM • Datamex College</p>
+  </footer>
+
+</body>
+</html>
